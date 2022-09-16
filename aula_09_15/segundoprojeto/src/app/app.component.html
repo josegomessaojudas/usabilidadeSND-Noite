@@ -1,0 +1,17 @@
+<p>Oi, meu nome é {{nome}} e tenho {{idade}} anos.</p>
+<p>Lançando um dado: {{lancarDado()}}</p>
+
+<div class="container my-3 border p-3">
+    <form>
+        <div class="form-group">
+            <label for="nomeInput">Nome</label>
+            <input type="nome" class="form-control" id="nomeInput" placeholder="Digite um nome" #nomeInput>
+        </div>
+        <button type="button" (click)="adicionar(nomeInput)" class="btn btn-primary btnblock">
+            Adicionar</button>
+        <div class="alert alert-primary mt-3 p-3" [hidden]="esconderCaixa">
+            {{nome}}
+        </div>
+    </form>
+</div>
+<router-outlet></router-outlet>
