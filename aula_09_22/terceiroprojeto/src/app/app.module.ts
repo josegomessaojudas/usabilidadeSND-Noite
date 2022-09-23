@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PessoaCartaoComponent } from './pessoa-cartao/pessoa-cartao.component';
+import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PessoaCartaoComponent,
+    PessoaCadastroComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,8 @@ export class AppComponent {
 
   pessoas = [
     { nome: "José", idade: 18 },
-    { nome: "Maria", idade: 22 }
+    { nome: "Maria", idade: 22 },
+    { nome: "joão", idade: 66 }
   ];
 
   adicionar(nome: any, idade: any) {
@@ -24,4 +25,8 @@ export class AppComponent {
     this.textoBotao = this.esconder ? "Exibir" : "Esconder";
     this.esconder = !this.esconder;
   }
+
+  onAdicionarPessoa(pessoa: { nome: string; idade: number; }) {
+    this.pessoas = [pessoa, ...this.pessoas];
+    }
 }
