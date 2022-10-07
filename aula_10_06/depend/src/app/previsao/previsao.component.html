@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem">
+  <div class="card-header text-center">
+    <div class="d-flex flex-row">
+      <img src="{{ previsao.imgURL }}" style="width: 30%" />
+      <div class="">
+        <p>{{ previsao.data }}</p>
+        <p>{{ previsao.descricao }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="bg-light p-4 text-center mb-2">
+      Temperatura máxima: {{ previsao.tempMax }}&deg;
+    </div>
+    <div class="bg-light p-4 text-center mb-2">
+      Temperatura mínima: {{ previsao.tempMin }}&deg;
+    </div>
+    <div class="bg-light p-4 text-center">
+      Humidade relativa do ar: {{ previsao.humidity | percent: "2.1-1" }}
+    </div>
+  </div>
+</div>
