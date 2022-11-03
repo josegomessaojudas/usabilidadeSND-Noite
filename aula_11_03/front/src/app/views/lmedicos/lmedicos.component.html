@@ -1,0 +1,38 @@
+<div *ngIf="medicos$ | async as lmedicos; else lendo">
+  <mat-table [dataSource]="medicos$">
+    <ng-container matColumnDef="Medico">
+      <mat-header-cell *matHeaderCellDef>Medico</mat-header-cell>
+      <mat-cell *matCellDef="let lmedicos"> {{ lmedicos.nome }} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    <ng-container matColumnDef="Ações">
+      <mat-header-cell *matHeaderCellDef>
+        <button
+          mat-mini-fab
+          color="accent"
+          aria-label="Incluir"
+          style="margin-right: 50px"
+        >
+          <mat-icon (click)="onAdd()">add</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary">
+          <mat-icon (click)="onCancelar()">arrow_back</mat-icon>
+        </button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let lmedicos">
+        <button mat-mini-fab color="primary" style="margin-right: 15px">
+          <mat-icon (click)="onEdit(lmedicos)">edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+  </mat-table>
+</div>
+<ng-template #lendo>
+  <div class="lendo-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
