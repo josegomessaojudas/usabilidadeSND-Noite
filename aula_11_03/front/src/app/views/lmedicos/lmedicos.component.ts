@@ -11,7 +11,7 @@ import { MedicoService } from 'src/app/services/medico/medico.service';
 export class LmedicosComponent implements OnInit {
 
   medicos$: Observable<Medico[]> ;
-  displayedColumns = ['Medico', 'Ações'];
+  displayedColumns = ['Medico', 'Acoes'];
 
   constructor(private serviceMedico: MedicoService ) {
     this.medicos$ = this.serviceMedico.listaDeMedicos().pipe(
@@ -27,12 +27,7 @@ export class LmedicosComponent implements OnInit {
 
   }
 
-  lista(){
-    const jose = this.medicos$.subscribe(
-      (res) => console.log(res)
-    )
-    console.log(jose);
-  }
+  lista(){  }
 
   onAdd(){}
 

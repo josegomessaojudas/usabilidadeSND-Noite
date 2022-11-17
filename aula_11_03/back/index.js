@@ -18,7 +18,7 @@ const pool = mysql2.createPool({
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE");
   res.header("Access-Control-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -34,15 +34,15 @@ app.use((req, res, next) => {
 app.post('/medicos', (req, res) => {
   const { crm, nome } = req.body
   const sql = "INSERT INTO tb_medico (crm, nome) VALUES (?, ?)"
-
   pool.query(
     sql,
     [crm, nome],
     (err, results, fields) => {
-      console.log("Erro: ", err)
-      console.log("Results: ", results)
-      console.log("Fields: ", fields)
-      res.send("ok")
+      if(err) {
+        console.log("erro=> ", err);
+      } else {
+        res.status(200).send("ok")
+      }
     });
 });
 

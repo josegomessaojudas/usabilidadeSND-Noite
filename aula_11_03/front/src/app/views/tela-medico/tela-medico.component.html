@@ -1,0 +1,22 @@
+<form class="example-form">
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>CRM</mat-label>
+          <input matInput name="crm" [(ngModel)]="crm" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput name="nome" [(ngModel)]="nome"/>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</form>
+<button mat-raised-button color="primary" (click)="onSave()">salvar</button>
+<p>
+  <button mat-raised-button color="primary">cancelar</button>
+</p>
